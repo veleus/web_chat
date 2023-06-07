@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Chat</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        /* Добавьте свои пользовательские стили здесь */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Web Chat</h1>
+        <div id="messages" class="mt-4">
+            {% for message in messages %}
+                <div class="card mb-2">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ message.username }}</h5>
+                        <p class="card-text">{{ message.message }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <form id="message-form" action="" method="POST" class="mt-4">
+            <div class="row">
+                <div class="col">
+                    <input type="text" name="username" class="form-control" placeholder="Username" required>
+                </div>
+                <div class="col">
+                    <input type="text" name="message" class="form-control" placeholder="Message" required>
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
